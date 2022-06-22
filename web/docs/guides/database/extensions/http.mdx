@@ -4,17 +4,28 @@ title: "http: RESTful Client"
 description: An HTTP Client for PostgreSQL Functions.
 ---
 
-import ExtensionsComponent from '../../../../src/components/Extensions'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 The `http` extension allows you to call RESTful endpoints within Postgres.
 
+## Quick demo
+
+<iframe
+  className="w-full video-with-border"
+  width="640"
+  height="385"
+  src="https://www.youtube-nocookie.com/embed/rARgrELRCwY"
+  frameBorder="1"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
 ## Overview
 
 Let's cover some basic concepts:
 
-- REST: stands for REpresentational State Transfer. It's simploy a way to request data from external services.
+- REST: stands for REpresentational State Transfer. It's simply a way to request data from external services.
 - RESTful APIs are servers which accept HTTP "calls". The calls are typically:
   - `GET` − Read only access to a resource.
   - `POST` − Creates a new resource.
@@ -22,7 +33,6 @@ Let's cover some basic concepts:
   - `PUT` − Updates an existing resource or creates a new resource.
 
 You can use the `http` extension to make these network requests from Postgres.
-
 
 ## Usage
 
@@ -52,17 +62,17 @@ values={[
 ```sql 
 
 -- Example: enable the "http" extension 
-create extenstion http with schema extensions;
+create extension http with schema extensions;
 
 -- Example: disable the "http" extension 
-drop extenstion if exists http;
+drop extension if exists http;
 
 ```
 
 Even though the SQL code is `create extension`, this is the equivalent of "enabling the extension". 
 To disable an extension you can call `drop extension`.
 
-It's good practise to create the extension within a separate schema (like `extensions`) to keep your database clean.
+It's good practice to create the extension within a separate schema (like `extensions`) to keep your database clean.
 
 </TabItem>
 
@@ -115,4 +125,4 @@ from
 
 ## Resources 
 
-- Official [`http` Github Repository](https://github.com/pramsey/pgsql-http).
+- Official [`http` GitHub Repository](https://github.com/pramsey/pgsql-http).

@@ -1,12 +1,13 @@
 <p align="center">
-  <img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-[Supabase](https://supabase.io) jest open source alternatywą dla Firebase. Budujemy funkcjonalności Firebase używając narzędzi open source klasy korporacyjnej.
+[Supabase](https://supabase.com) jest open source alternatywą dla Firebase. Budujemy funkcjonalności Firebase używając narzędzi open source klasy korporacyjnej.
 
 - [x] Hostowana baza danych Postgres
 - [x] Subskrypcje w czasie rzeczywistym
@@ -14,22 +15,24 @@
 - [x] Automatycznie generowany interfejs API
 - [x] Panel zarządzania
 - [x] Przechowywanie danych
-- [ ] Funkcje (dostępne w krótce)
+- [x] Funkcje
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## Dokumentacja
 
-Po pełną dokumentację, odwiedź [supabase.io/docs](https://supabase.io/docs)
+Po pełną dokumentację, odwiedź [supabase.com/docs](https://supabase.com/docs)
 
 ## Społeczność & Wsparcie
 
 - [Forum społeczności](https://github.com/supabase/supabase/discussions). Najlepsze dla: pomoc przy budowaniu, dyskusje na temat najlepszych praktyk dotyczących bazy danych.
 - [GitHub Issues](https://github.com/supabase/supabase/issues). Najlepsze dla: bugi i błędy napotkane podczas używania Supabase.
-- [Wsparcie email](https://supabase.io/docs/support#business-support). Najlepsze dla: problemy z bazą danych i infrastrukturą.
+- [Wsparcie email](https://supabase.com/docs/support#business-support). Najlepsze dla: problemy z bazą danych i infrastrukturą.
 
 ## Status
 
 - [x] Alpha: Testujemy Supabase z zamkniętą listą klientów.
-- [x] Publiczna Alpha: Każdy może zapisać się do testów na [app.supabase.io](https://app.supabase.io). Nie bądźcie dla nas zbyt surowi, jest kilka problemów.
+- [x] Publiczna Alpha: Każdy może zapisać się do testów na [app.supabase.com](https://app.supabase.com). Nie bądźcie dla nas zbyt surowi, jest kilka problemów.
 - [x] Publiczna Beta: Wystarczająco stabilna do użytku poza przedsiębiorstwami.
 - [ ] Publiczna: Gotowa wersja do użytku produkcyjnego.
 
@@ -45,9 +48,9 @@ Supabase jest połączeniem narzędzi open source. Budujemy funkcjonalności Fir
 
 **Aktualna architektura**
 
-Supabase jest [hostowaną platformą](https://app.supabase.io). Możesz się zarejestrować i zacząć używać Supabase bez potrzeby instalacji dodatkowych narzędzi. Cały czas tworzymy lokalne środowisko deweloperskie - jest to teraz nasz priorytet, razem ze stabilnością platformy.
+Supabase jest [hostowaną platformą](https://app.supabase.com). Możesz się zarejestrować i zacząć używać Supabase bez potrzeby instalacji dodatkowych narzędzi. Cały czas tworzymy lokalne środowisko deweloperskie - jest to teraz nasz priorytet, razem ze stabilnością platformy.
 
-![Architektura](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![Architektura](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [PostgreSQL](https://www.postgresql.org/) jest obiektowo-relacyjnym system baz danych z ponad 30 letnim aktywnym rozwojem dzięki któremu zyskał dobrą reputacje dzięki niezawodności, solidności funkcji i wydajności.
 - [Realtime](https://github.com/supabase/realtime) jest serwerem Elixir który umożliwia nasłuchiwanie na wsady PostgreSQL, aktualizacje, i usunięcia używając websocketów. Supabase nasłuchuje na budowane w Postgres' funkcje replikacji, konwertuje replikacje transmisji bitów do struktury JSON przez websockety.

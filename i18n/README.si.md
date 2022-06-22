@@ -1,12 +1,13 @@
 <p align="center">
-<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-[Supabase](https://supabase.io) යනු විවෘත පරිශීලක Firebase වෙනුවට ආදේශකයකි.අපි Firebase වල ඇති පහසුකම් enterprise-grade විවෘත පරිශීලක මෘදුකාංග භාවිතා කරමින් නිපදවනු ලබයි.
+[Supabase](https://supabase.com) යනු විවෘත පරිශීලක Firebase වෙනුවට ආදේශකයකි.අපි Firebase වල ඇති පහසුකම් enterprise-grade විවෘත පරිශීලක මෘදුකාංග භාවිතා කරමින් නිපදවනු ලබයි.
 
 - [x] Hosted Postgres Database
 - [x] Realtime subscriptions
@@ -14,22 +15,24 @@
 - [x] Auto-generated APIs
 - [x] Dashboard
 - [x] Storage
-- [ ] Functions (coming soon)
+- [x] Functions
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## ප්‍රලේඛනය
 
-සම්පූර්ණ විස්තරය කියවන්න ,මෙතනින් [supabase.io/docs](https://supabase.io/docs)
+සම්පූර්ණ විස්තරය කියවන්න ,මෙතනින් [supabase.com/docs](https://supabase.com/docs)
 
 ## Community එක හා සහයෝගය ගැනීමට
 
 - [Community Forum](https://github.com/supabase/supabase/discussions). වඩාත්ම සුදුසු: දේවල් සෑදීමට උදව් ගැනීම.database best practices පිළිබඳ සාකච්ඡා කිරීමට.
 - [GitHub Issues](https://github.com/supabase/supabase/issues). වඩාත්ම සුදුසු: Supabase භාවිතා කිරීමේදී ඔබට හමුවන වැරදී හා ප්‍රශ්න.
-- [Email Support](https://supabase.io/docs/support#business-support). වඩාත්ම සුදුසු: database හා infrastructure පිළිබඳ ඔබේ ඇති ප්‍රශ්න.
+- [Email Support](https://supabase.com/docs/support#business-support). වඩාත්ම සුදුසු: database හා infrastructure පිළිබඳ ඔබේ ඇති ප්‍රශ්න.
 
 ## තත්ත්වය
 
 - [x] Alpha: අප දැනට Supabase විවෘත නොවන පාරිභෝගිකයන් සමඟ පරීක්ෂා කරනවා
-- [x] Public Alpha: ඕනෑම කෙනෙකුට [app.supabase.io](https://app.supabase.io) මඟින් සම්බන්ධ විය හැකිය.නමුත් හෙමිහිට පරීක්ෂා කරන්න, දැනට kinks කිහිපයක් පමණයි ඇත්තේ
+- [x] Public Alpha: ඕනෑම කෙනෙකුට [app.supabase.com](https://app.supabase.com) මඟින් සම්බන්ධ විය හැකිය.නමුත් හෙමිහිට පරීක්ෂා කරන්න, දැනට kinks කිහිපයක් පමණයි ඇත්තේ
 - [x] Public Beta: non-enterprise භාවිතයන් ගොඩකට ස්ථාවරයි
 - [ ] Public: භාවිතා කිරීම සඳහා සූදානම්
 
@@ -45,9 +48,9 @@ Supabase යනු විවෘත පරිශීලක උපාංග කි�
 
 **Current architecture**
 
-Supabase යනු [hosted platform](https://app.supabase.io) එකකි.ඔබට දැන් සම්බන්ධ වී කිසිම දෙයක් install නොකර Supabase භාවිත කල හැකිය.අප තවමත් local development අත්දැකීම සාදමින් සිටියි- මෙය තමයි අපේ දැනට ප්‍රධාන අරමුණ,platform එකේ ස්ථාවර බව සමඟ.
+Supabase යනු [hosted platform](https://app.supabase.com) එකකි.ඔබට දැන් සම්බන්ධ වී කිසිම දෙයක් install නොකර Supabase භාවිත කල හැකිය.අප තවමත් local development අත්දැකීම සාදමින් සිටියි- මෙය තමයි අපේ දැනට ප්‍රධාන අරමුණ,platform එකේ ස්ථාවර බව සමඟ.
 
-![Architecture](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![Architecture](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [PostgreSQL](https://www.postgresql.org/) යනු අවුරුදු 30 වඩා කාලයක් ක්‍රියාත්මක වෙමින් පවතින object-relational database system එකක් වන අතර එය විශ්වාසනීයත්වයට,ක්‍රියාකාරීත්වයට හා feature robustness බවට කීර්තියක් අත්පත්කරගෙන සිටියි
 - [Realtime](https://github.com/supabase/realtime) is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Supabase listens to Postgres' built-in replication functionality, converts the replication byte stream into JSON, then broadcasts the JSON over websockets.

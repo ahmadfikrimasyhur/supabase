@@ -4,7 +4,6 @@ title: "Full Text Search"
 description: How to use full text search in PostgreSQL.
 ---
 
-import ExtensionsComponent from '../../../../web/src/components/Extensions'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -20,8 +19,8 @@ For this guide we'll use the following example data:
 <Tabs
 defaultValue="Data"
 values={[
-  {label: 'SQL', value: 'SQL'},
   {label: 'Data', value: 'Data'},
+  {label: 'SQL', value: 'SQL'},
 ]}>
 
 <TabItem value="SQL">
@@ -39,7 +38,7 @@ values
   ('The Poky Little Puppy','Janette Sebring Lowrey','Puppy is slower than other, bigger animals.'),
   ('The Tale of Peter Rabbit','Beatrix Potter','Rabbit eats some vegetables.'),
   ('Tootle','Gertrude Crampton','Little toy train has big dreams.'),
-  ('Green Eggs and Ham','Dr. Seuss','Sam has changing food preferences and eats unusally colored food.'),
+  ('Green Eggs and Ham','Dr. Seuss','Sam has changing food preferences and eats unusually colored food.'),
   ('Harry Potter and the Goblet of Fire','J.K. Rowling','Fourth year of school starts, big drama ensues.');
 ```
 
@@ -51,7 +50,7 @@ values
 |    1 | The Poky Little Puppy | Janette Sebring Lowrey | Puppy is slower than other, bigger animals. |
 |    2 | The Tale of Peter Rabbit  | Beatrix Potter | Rabbit eats some vegetables. |
 |    3 | Tootle | Gertrude Crampton | Little toy train has big dreams. |
-|    4 | Green Eggs and Ham | Dr. Seuss | Sam has changing food preferences and eats unusally colored food. |
+|    4 | Green Eggs and Ham | Dr. Seuss | Sam has changing food preferences and eats unusually colored food. |
 |    5 | Harry Potter and the Goblet of Fire | J.K. Rowling | Fourth year of school starts, big drama ensues.  |
 
 </TabItem>
@@ -67,7 +66,7 @@ The functions we'll cover in this guide are:
 Converts your data into searchable "tokens". `to_tsvector()` stands for "to text search vector". For example:
 
 ```sql
-select to_tsvector("green eggs and ham")
+select to_tsvector('green eggs and ham')
 
 -- Returns 'egg':2 'green':1 'ham':4
 ``` 
@@ -76,7 +75,7 @@ Collectively these tokens are called a "document" which Postgres can use for com
 
 ### `to_tsquery()`
 
-Converts a query string into "tokens" to match match . `to_tsquery()` stands for "to text search query".
+Converts a query string into "tokens" to match. `to_tsquery()` stands for "to text search query".
 
 This conversion step is important because we will want to "fuzzy match" on keywords. 
 For example if a user searches for "eggs", and a column has the value "egg", we probably still want to return a match.
@@ -92,24 +91,37 @@ Take the following example:
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
 ]}>
 <TabItem value="SQL">
 
 ```sql
 select * 
 from books 
-where name = 'Harry';
+where title = 'Harry';
 ```
 
 </TabItem>
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
-  .eq('name', 'Harry')
+  .eq('title', 'Harry')
+```
+
+</TabItem>
+  
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .eq('title', 'Harry')
+  .execute();
 ```
 
 </TabItem>
@@ -123,24 +135,36 @@ example above:
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
 ]}>
 <TabItem value="SQL">
 
 ```sql
 select * 
 from books 
-where to_tsvector(name) @@ to_tsquery('Harry');
+where to_tsvector(title) @@ to_tsquery('Harry');
 ```
 
 </TabItem>
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
-  .textSearch('name', `'Harry'`)
+  .textSearch('title', `'Harry'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('title', "'Harry'")
+  .execute();
 ```
 
 </TabItem>
@@ -156,7 +180,8 @@ To find all `books` where the `description` contain the word `big`:
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
   {label: 'Data', value: 'Data'},
 ]}>
 <TabItem value="SQL">
@@ -175,10 +200,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('description', `'big'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('description', "'big'")
+  .execute();
 ```
 
 </TabItem>
@@ -233,7 +269,8 @@ To find all `books` where `description` contains BOTH of the words `little` and 
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
   {label: 'Data', value: 'Data'},
 ]}>
 <TabItem value="SQL">
@@ -252,10 +289,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('description', `'little' & 'big'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('description', "'little' & 'big'")
+  .execute();
 ```
 
 </TabItem>
@@ -276,7 +324,8 @@ To find all `books` where `description` contain ANY of the words `little` or `bi
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
   {label: 'Data', value: 'Data'},
 ]}>
 <TabItem value="SQL">
@@ -295,10 +344,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('description', `'little' | 'big'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('description', "'little' | 'big'")
+  .execute();
 ```
 
 </TabItem>
@@ -339,8 +399,9 @@ values={[
 alter table 
   books 
 add column 
-  fts tsvector generated always as to_tsvector(description || ' ' || title);
-
+  fts tsvector generated always as (to_tsvector('english', description || ' ' || title)) stored;
+  
+create index books_fts on books using gin (fts); -- generate the index
 
 select id, fts 
 from books;
@@ -368,7 +429,8 @@ Now that we've created and populated our index, we can search it using the same 
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
   {label: 'Data', value: 'Data'},
 ]}>
 <TabItem value="SQL">
@@ -386,10 +448,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('fts', `'little' & 'big'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('fts', "'little' & 'big'")
+  .execute();
 ```
 
 </TabItem>
@@ -417,7 +490,8 @@ For example, to find the phrase `big dreams`, where the a match for "big" is fol
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
 ]}>
 <TabItem value="SQL">
 
@@ -434,10 +508,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('description', `'big' <-> 'dreams'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('description', "'big' <-> 'dreams'")
+  .execute();
 ```
 
 </TabItem>
@@ -450,7 +535,8 @@ We can also use the `<->` to find words within a certain distance of eachother. 
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
 ]}>
 <TabItem value="SQL">
 
@@ -467,10 +553,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('description', `'year' <2> 'school'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('description', "'year' <2> 'school'")
+  .execute();
 ```
 
 </TabItem>
@@ -486,7 +583,8 @@ For example, to find records that have the word `big` but not `little`:
 defaultValue="SQL"
 values={[
   {label: 'SQL', value: 'SQL'},
-  {label: 'Javascript', value: 'JS'},
+  {label: 'JavaScript', value: 'JS'},
+  {label: 'Dart', value: 'DART'},
 ]}>
 <TabItem value="SQL">
 
@@ -503,10 +601,21 @@ where
 <TabItem value="JS">
 
 ```js
-const { data, error } = supabase
+const { data, error } = await supabase
   .from('books')
   .select()
   .textSearch('description', `'big' & !'little'`)
+```
+
+</TabItem>
+<TabItem value="DART">
+
+```dart
+final result = await client
+  .from('books')
+  .select()
+  .textSearch('description', "'big' & !'little'")
+  .execute();
 ```
 
 </TabItem>

@@ -1,12 +1,13 @@
 <p align="center">
-  <img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-[Supabase](https://supabase.io)は、オープンソースの Firebase 代替製品です。エンタープライズグレードのオープンソースツールを使って、Firebase の機能を構築しています。
+[Supabase](https://supabase.com)は、オープンソースの Firebase 代替製品です。エンタープライズグレードのオープンソースツールを使って、Firebase の機能を構築しています。
 
 - [x] ホスティングされた Postgres データベース
 - [x] リアルタイムサブスクリプション
@@ -14,22 +15,24 @@
 - [x] API を自動生成
 - [x] ダッシュボード
 - [x] ストレージ
-- [ ] 関数 (近日公開)
+- [x] 関数
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## ドキュメンテーション
 
-詳しいドキュメントは[supabase.io/docs](https://supabase.io/docs)をご覧ください。
+詳しいドキュメントは[supabase.com/docs](https://supabase.com/docs)をご覧ください。
 
 ## コミュニティとサポート
 
 - [コミュニティフォーラム](https://github.com/supabase/supabase/discussions) どんな時に使うか：構築の手助け、データベースのベストプラクティスに関する議論など
 - [GitHub Issue](https://github.com/supabase/supabase/issues) どんな時に使うか: Supabase で起こったバグやエラーについて
-- [Email サポート](https://supabase.io/docs/support#business-support) どんな時に使うか: ユーザー自身のデータベースやインフラに何か問題が発生した場合
+- [Email サポート](https://supabase.com/docs/support#business-support) どんな時に使うか: ユーザー自身のデータベースやインフラに何か問題が発生した場合
 
 ## ステータス
 
 - [x] Alpha: 限られたユーザーで Supabase をテストしています。
-- [x] Public Alpha: 誰でも[app.supabase.io](https://app.supabase.io)から登録ができます。ただし、バグなどがある可能性がありますので、ご容赦ください。
+- [x] Public Alpha: 誰でも[app.supabase.com](https://app.supabase.com)から登録ができます。ただし、バグなどがある可能性がありますので、ご容赦ください。
 - [x] Public Beta: 企業以外のほとんどのユースケースに耐えうる十分な安定性を確保。
 - [ ] Public: 実用的な用途に対応
 
@@ -45,10 +48,10 @@ Supabase は、オープンソースのツールを組み合わせてできて�
 
 **現在のアーキテクチャ**
 
-Supabase は[ホスティングされたプラットフォーム](https://app.supabase.io)です。登録するだけで、何もインストールせずに使い始めることができます。
+Supabase は[ホスティングされたプラットフォーム](https://app.supabase.com)です。登録するだけで、何もインストールせずに使い始めることができます。
 更に現在ローカルでの開発環境を整えており、これはプラットフォームの安定性と並んで今最優先で進めているプロジェクトになります。
 
-![アーキテクチャー](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![アーキテクチャー](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [PostgreSQL](https://www.postgresql.org/)は、30 年以上にわたって開発・改善されてきたオブジェクトリレーショナルデータベースシステムで、信頼性、機能の堅牢性、パフォーマンスの面で高い評価を得ています。
 - [Realtime](https://github.com/supabase/realtime)は、PostgreSQL の insert、update、delete の情報を WebSocket で受信できる Elixir サーバです。Supabase は Postgres に組み込まれたレプリケーション機能をリッスンし、レプリケーションのバイトストリームを JSON に変換し、その JSON を WebSocket でブロードキャストします。

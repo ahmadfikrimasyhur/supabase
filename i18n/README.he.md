@@ -1,14 +1,15 @@
 <div style="direction: rtl;">
 
 <p align="center">
-<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-[Supabase](https://supabase.io) Supabase הוא חלופה בקוד פתוח של Firebase. אנו מפתחים את התכונות של Firebase באמצעות כלי קוד פתוח ברמת גימור ארגונית.
+[Supabase](https://supabase.com) Supabase הוא חלופה בקוד פתוח של Firebase. אנו מפתחים את התכונות של Firebase באמצעות כלי קוד פתוח ברמת גימור ארגונית.
 
 - [x] מאגר נתונים מסוג פוסטגרס (Postgres)
 - [x] מנויים בזמן אמת
@@ -16,22 +17,24 @@
 - [x] ממשקי API אוטומטיים
 - [x] דשבורד
 - [x] אחסון
-- [ ] פונקציות (בקרוב)
+- [x] פונקציות
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## תיעוד
 
-לתיעוד המלא, בקר\י ב[supabase.io/docs](https://supabase.io/docs)
+לתיעוד המלא, בקר\י ב[supabase.com/docs](https://supabase.com/docs)
 
 ## קהילה & תמיכה
 
 - [פורום הקהילה](https://github.com/supabase/supabase/discussions). נועד עבור: עזרה בבנייה, דיון אודות שיטות עבודה מומלצות מול מאגר הנתונים.
 - [GitHub Issues](https://github.com/supabase/supabase/issues). נועד עבור: דיווח על באגים ושגיאות בזמן שימוש בSupabase
-- [אימייל תמיכה](https://supabase.io/docs/support#business-support). נועד עבור: תקלות במסד הנתונים או בתשתית שלך.
+- [אימייל תמיכה](https://supabase.com/docs/support#business-support). נועד עבור: תקלות במסד הנתונים או בתשתית שלך.
 
 ## סטטוס
 
 - [x] אלפא: בוחנים את המערכת מול מאגר סגור של לקוחות
-- [x] אלפא פומבית: כל אחד יכול להרשם ב[app.supabase.io](https://app.supabase.io). אבל תהיו עדינים, יהיו בעיות.
+- [x] אלפא פומבית: כל אחד יכול להרשם ב[app.supabase.com](https://app.supabase.com). אבל תהיו עדינים, יהיו בעיות.
 - [x] בטא פומבית: יציב מספיק לרוב הלקוחות הלא-ארגוניים.
 - [ ] יציב: מתאים לשימוש הכלל.
 
@@ -47,10 +50,10 @@ Supabase הוא שילוב של כלי קוד פתוח. אנו בונים את �
 
 **ארכיטקטורה נוכחית**
 
-Supabase היא [תשתית ענן](https://app.supabase.io)
+Supabase היא [תשתית ענן](https://app.supabase.com)
 . את\ה יכול\ה להירשם ולהתחיל להשתמש ב- Supabase מבלי להתקין שום דבר. אנו עדיין עובדים על לייצר את חוויית הפיתוח המקומית - בזה אנחנו מתמקדים, יחד עם יציבות המערכת.
 
-![Architecture](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![Architecture](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [פוסטגרס (PostgreSQL)](https://www.postgresql.org/) זהו מסד נתונים רלציוני עם למעלה מ -30 שנות פיתוח פעיל שזכתה למוניטין של אמינות, עמידות וביצועים.
 - [Realtime](https://github.com/supabase/realtime) הוא שרת Elixir המאפשר להאזין לתוספות, עדכונים ומחיקות ב-PostgreSQL באמצעות websockets. Supabase מאזין לפונקציונליות ההעתק המובנית של Postgres, ממיר את המידע ל- JSON ואז משדר את ה- JSON מעל websockets.

@@ -1,12 +1,13 @@
 <p align="center">
-    <img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-[Supabase](https://supabase.io) є альтернативою Firebase з відкритим кодом. Ми створюємо функціонал Firebase, використовуючи відкрите програмне забезпечення enterprise рівня.
+[Supabase](https://supabase.com) є альтернативою Firebase з відкритим кодом. Ми створюємо функціонал Firebase, використовуючи відкрите програмне забезпечення enterprise рівня.
 
 - [x] Хмарна база даних Postgres
 - [x] Підписка на оновлення в режимі реального часу
@@ -14,22 +15,24 @@
 - [x] Автоматично згенероване API
 - [x] Панель керування
 - [x] Сховище
-- [ ] Функції (незабаром)
+- [x] Функції
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## Документація
 
-Для отримання повної документації, перейдіть на [supabase.io/docs](https://supabase.io/docs)
+Для отримання повної документації, перейдіть на [supabase.com/docs](https://supabase.com/docs)
 
 ## Спільнота та Підтримка
 
 - [Форум спільноти](https://github.com/supabase/supabase/discussions). Найкраще допоможе у створенні та обговоренні кращих практик використання.
 - [GitHub Issues](https://github.com/supabase/supabase/issues). Найкраще для помилок при використанні Supabase.
-- [Підтримка поштою](https://supabase.io/docs/support#business-support). Найкраще в разі проблем з вашою БД чи інфраструктурою.
+- [Підтримка поштою](https://supabase.com/docs/support#business-support). Найкраще в разі проблем з вашою БД чи інфраструктурою.
 
 ## Статус
 
 - [x] Альфа: Тестування Supabase з закритим списком користувачів.
-- [x] Публічна Альфа: Кожен може зареєструватись на [app.supabase.io](https://app.supabase.io). Але будьте до нас поблажливішими, можуть зустрічатися недоліки у роботі.
+- [x] Публічна Альфа: Кожен може зареєструватись на [app.supabase.com](https://app.supabase.com). Але будьте до нас поблажливішими, можуть зустрічатися недоліки у роботі.
 - [x] Публічна Бета: Досить стабільна версія для більшості випадків, але не enterprise рівня.
 - [ ] Публічний реліз: Повністю готово для використання у Production середовищі.
 
@@ -45,9 +48,9 @@ Supabase – це поєднання відкритого програмного
 
 **Поточна архітектура**
 
-Supabase – це [хмарна платформа](https://app.supabase.io). Ви можете зареєструватися і почати використовувати її, нічого не встановлюючи. Ми досі продовжуємо покращувати зручність локальної розробки – це наш основний пріоритет, одночасно зі стабільністю платформи.
+Supabase – це [хмарна платформа](https://app.supabase.com). Ви можете зареєструватися і почати використовувати її, нічого не встановлюючи. Ми досі продовжуємо покращувати зручність локальної розробки – це наш основний пріоритет, одночасно зі стабільністю платформи.
 
-![Architecture](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![Architecture](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [PostgreSQL](https://www.postgresql.org/) – це об'єктно-реляційна система керування базами даних з більш ніж 30 роками активної розробки, котра завоювали міцну репутацію завдяки надійності та продуктивності.
 - [Realtime](https://github.com/supabase/realtime) являє собою Elixir сервер який дозволяє слухати зміни в PostgreSQL за допомогою веб-сокетів. Supabase використовує вбудований функціонал реплікації Postgres, перетворюючи бінарний протокол реплікації в JSON та передаючи по веб-сокетам.

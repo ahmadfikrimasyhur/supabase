@@ -1,12 +1,13 @@
 <p align="center">
-<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-[Supabase](https://supabase.io) este o alternativă open source la Firebase. Construim trăsăturile Firebase folosind instrumente open source de calitate.
+[Supabase](https://supabase.com) este o alternativă open source la Firebase. Construim trăsăturile Firebase folosind instrumente open source de calitate.
 
 - [x] Bază de date Postgres găzduită
 - [x] Abonamente Realtime
@@ -14,22 +15,24 @@
 - [x] API-uri generate automat
 - [x] Panou de control
 - [x] Depozitare
-- [ ] Funcții (în curând)
+- [x] Funcții
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## Documentație
 
-Pentru documentația completă vizitați [supabase.io/docs](https://supabase.io/docs)
+Pentru documentația completă vizitați [supabase.com/docs](https://supabase.com/docs)
 
 ## Comunitate și suport
 
 - [Forumul comunității](https://github.com/supabase/supabase/discussions). Cel mai bun pentru: ajutor în construire, discuție despre cele mai bune practici pentru bazele de date.
 - [GitHub Issues](https://github.com/supabase/supabase/issues). Cel mai bun pentru: bug-uri și erori întâlnite în timpul utilizării Supabase.
-- [Suport prin email](https://supabase.io/docs/support#business-support). Cel mai bun pentru: probleme cu baza dumneavostră de date sau de infrastructură.
+- [Suport prin email](https://supabase.com/docs/support#business-support). Cel mai bun pentru: probleme cu baza dumneavostră de date sau de infrastructură.
 
 ## Status
 
 - [x] Alpha: Testăm Supabase cu o listă restrânsă de clienți
-- [x] Alpha public: Oricine poate să se înscrie la [app.supabase.io](https://app.supabase.io). Fiți îngăduitori cu noi, există câteva imperfecțiuni.
+- [x] Alpha public: Oricine poate să se înscrie la [app.supabase.com](https://app.supabase.com). Fiți îngăduitori cu noi, există câteva imperfecțiuni.
 - [x] Beta public: Suficient de stabil pentru majoritatea proiectelor mici sau medii.
 - [ ] Public: Pregătit pentru producție
 
@@ -45,9 +48,9 @@ Supabase este o combinație de unelte open source. Construim trăsăturile din F
 
 **Arhitectura actuală**
 
-Supabase este o [platformă găzduită](https://app.supabase.io). Puteți să vă înscrieți și să începeți să folosiți Supabase fără a instala orice. Experiența de developare locală încă mai este în dezvoltare, acesta fiind lucrul la care ne concentrăm cel mai mult, împreună cu stabilitatea platformei.
+Supabase este o [platformă găzduită](https://app.supabase.com). Puteți să vă înscrieți și să începeți să folosiți Supabase fără a instala orice. Experiența de developare locală încă mai este în dezvoltare, acesta fiind lucrul la care ne concentrăm cel mai mult, împreună cu stabilitatea platformei.
 
-![Arhitectură](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![Arhitectură](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [PostgreSQL](https://www.postgresql.org/) este o bază de date de obiecte relațională cu peste 30 de ani de dezvoltare și o reputație pentru fiabilitate și performanță.
 - [Realtime](https://github.com/supabase/realtime) este un server Elixir care permite ascultarea inserțiilor, actualizărilor și ștergerilor bazei de date PostgreSQL prin intermediul websocket-urilor. Supabase ascultă funcționalitatea de replicare integrată PostgreSQL, convertește fluxul de octeți al replicării în JSON, apoi emite JSON-ul prin intermediul websocket-urilor.

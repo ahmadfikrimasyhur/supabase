@@ -5,50 +5,30 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const goTrueClient = require('./sidebar_spec_gotrue')
-const postgrestClient = require('./sidebar_spec_postgrest')
-const realtimeClient = require('./sidebar_spec_realtime')
 const supabaseClient = require('./sidebar_spec_supabase')
 const supabaseCli = require('./sidebar_spec_cli')
-const postgres = require('./sidebar_spec_postgres')
+const dart = require('./sidebar_spec_dart')
 
 module.exports = {
-  goTrueClient: [
-    {
-      type: 'category',
-      label: 'Javascript',
-      collapsed: false,
-      items: goTrueClient.docs,
-    },
-  ],
-  postgrestClient: [
-    {
-      type: 'category',
-      label: 'Javascript',
-      collapsed: false,
-      items: postgrestClient.docs,
-    },
-  ],
-  realtimeClient: [
-    {
-      type: 'category',
-      label: 'Javascript',
-      collapsed: false,
-      items: realtimeClient.docs,
-    },
-  ],
   supabaseClient: [
+    'reference',
     {
       type: 'category',
-      label: 'Javascript',
+      label: 'JavaScript',
       collapsed: false,
       items: supabaseClient.docs,
     },
+    // {
+    //   type: 'category',
+    //   label: 'Postgres',
+    //   collapsed: false,
+    //   items: postgres.docs,
+    // },
     {
       type: 'category',
-      label: 'Postgres',
+      label: 'Dart',
       collapsed: false,
-      items: postgres.docs,
+      items: dart.docs,
     },
     {
       type: 'category',
@@ -56,69 +36,63 @@ module.exports = {
       collapsed: false,
       items: supabaseCli.docs,
     },
+    {
+      type: 'category',
+      label: 'Tools',
+      collapsed: false,
+      items: ['reference/tools/reference-auth'],
+    },
   ],
   docs: [
     {
       type: 'category',
-      label: 'Introduction',
-      items: ['about', 'faq'],
-      collapsed: false,
-    },
-    {
-      type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
+      label: 'Overview',
       items: [
-        'guides/platform',
-        'guides/database',
-        'guides/auth',
-        'guides/storage',
-        'guides/api',
-        'guides/client-libraries',
+        'about',
+        'architecture',
+        'guides/hosting/platform',
         'guides/local-development',
+        'guides/examples',
       ],
+      collapsed: false,
     },
     {
       type: 'category',
-      label: 'Tutorials',
+      label: 'Quickstarts',
       collapsed: false,
       items: [
-        'guides/examples',
+        'guides/with-angular',
+        'guides/with-expo',
+        'guides/with-flutter',
+        'guides/with-ionic-angular',
+        'guides/with-ionic-react',
+        'guides/with-ionic-vue',
         'guides/with-nextjs',
         'guides/with-react',
+        'guides/with-redwoodjs',
+        'guides/with-solidjs',
         'guides/with-svelte',
+        'guides/with-sveltekit',
         'guides/with-vue-3',
-        'guides/self-hosting',
       ],
-    },
-    {
-      type: 'category',
-      label: 'See Also',
-      collapsed: false,
-      items: ['handbook/contributing', 'company/terms', 'company/privacy', 'company/aup'],
-    },
-  ],
-  guides: [
-    {
-      type: 'category',
-      label: 'Guides',
-      items: ['guides'],
-      collapsed: false,
     },
     {
       type: 'category',
       label: 'Database',
       collapsed: false,
       items: [
+        'guides/database',
+        'guides/database/connecting-to-postgres',
+        'guides/database/tables',
+        'guides/database/functions',
         'guides/database/full-text-search',
-        // 'guides/database/arrays',
         // 'guides/database/json',
-        // 'guides/database/managing-passwords',
+        // 'guides/database/arrays',
         // 'guides/database/sql-to-api',
         {
           type: 'category',
           label: 'Extensions',
-          collapsed: false,
+          collapsed: true,
           items: [
             'guides/database/extensions',
             // 'guides/database/extensions/pgtap',
@@ -127,50 +101,76 @@ module.exports = {
             'guides/database/extensions/uuid-ossp',
           ],
         },
+        {
+          type: 'category',
+          label: 'Configuration',
+          collapsed: true,
+          items: [
+            'guides/database/timeouts',
+            'guides/database/replication',
+            'guides/database/managing-passwords',
+            'guides/database/managing-timezones',
+          ],
+        },
       ],
+    },
+    {
+      type: 'category',
+      label: 'APIs',
+      collapsed: false,
+      items: ['guides/api', 'guides/api/generating-types'],
+    },
+    {
+      type: 'category',
+      label: 'Functions',
+      collapsed: false,
+      items: ['guides/functions'],
     },
     {
       type: 'category',
       label: 'Auth',
       collapsed: false,
       items: [
-        'guides/auth/managing-user-data',
+        'guides/auth',
         {
           type: 'category',
-          label: 'OAuth Providers',
-          collapsed: false,
+          label: 'Authentication',
+          collapsed: true,
           items: [
+            'guides/auth/auth-email',
+            'guides/auth/auth-magic-link',
             'guides/auth/auth-apple',
+            'guides/auth/auth-azure',
             'guides/auth/auth-bitbucket',
             'guides/auth/auth-discord',
             'guides/auth/auth-facebook',
             'guides/auth/auth-github',
             'guides/auth/auth-gitlab',
             'guides/auth/auth-google',
+            'guides/auth/auth-keycloak',
+            'guides/auth/auth-linkedin',
+            'guides/auth/auth-notion',
+            'guides/auth/auth-slack',
+            'guides/auth/auth-spotify',
+            'guides/auth/auth-twitch',
             'guides/auth/auth-twitter',
+            'guides/auth/auth-workos',
+            'guides/auth/auth-zoom',
+            'guides/auth/auth-twilio',
+            'guides/auth/auth-vonage',
+            'guides/auth/auth-messagebird',
           ],
         },
-      ],
-    },
-    // {
-    //   type: 'category',
-    //   label: 'Storage',
-    //   collapsed: false,
-    //   items: ['guides/storage/storage-sample'],
-    // },
-  ],
-  resources: [
-    { type: 'category', label: 'Resources', items: ['resources'], collapsed: false },
-    // { type: 'category', label: 'Resources', collapsed: false },
-    {
-      type: 'category',
-      label: 'Learn',
-      collapsed: false,
-      items: [
         {
           type: 'category',
-          label: 'Auth Deep Dive',
-          collapsed: false,
+          label: 'Authorization',
+          collapsed: true,
+          items: ['guides/auth/row-level-security', 'guides/auth/managing-user-data'],
+        },
+        {
+          type: 'category',
+          label: 'Deep Dive',
+          collapsed: true,
           items: [
             'learn/auth-deep-dive/auth-deep-dive-jwts',
             'learn/auth-deep-dive/auth-row-level-security',
@@ -183,53 +183,62 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Tools',
+      label: 'Storage',
+      collapsed: false,
+      items: ['guides/storage'],
+    },
+    {
+      type: 'category',
+      label: 'Platform',
       collapsed: false,
       items: [
-        'gotrue/server/about',
-        'gotrue/client/index',
-        'postgrest/server/about',
-        'postgrest/client/index',
-        'realtime/server/about',
-        'realtime/client/index',
+        'guides/platform/logs',
+        'guides/platform/metrics',
+        'going-into-prod',
+        'guides/platform/performance',
+        'guides/platform/permissions'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Self Hosting',
+      collapsed: false,
+      items: ['guides/hosting/overview', 'guides/hosting/docker'],
+    },
+    {
+      type: 'category',
+      label: 'Integrations',
+      collapsed: false,
+      items: [
+        'guides/integrations/appsmith',
+        'guides/integrations/auth0',
+        'guides/integrations/clerk',
+        'guides/integrations/dashibase',
+        'guides/integrations/draftbit',
+        'guides/integrations/pgmustard',
+        'guides/integrations/plasmic',
+        'guides/integrations/prisma',
+        'guides/integrations/snaplet',
+        'guides/integrations/stytch',
+        'guides/integrations/supertokens',
+        'guides/integrations/vercel',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'See Also',
+      collapsed: false,
+      items: [
+        'faq',
+        'handbook/contributing',
+        'handbook/supasquad',
+        'company/terms',
+        'company/privacy',
+        'company/aup',
+        'company/sla',
       ],
     },
   ],
-  // realtimeServer: [
-  //   {
-  //     type: 'category',
-  //     label: 'Realtime',
-  //     collapsed: false,
-  //     items: ['realtime/server/about'],
-  //   },
-  //   {
-  //     type: 'category',
-  //     label: 'Self hosting',
-  //     collapsed: false,
-  //     items: [
-  //       'realtime/server/docker',
-  //       'realtime/server/aws',
-  //       'realtime/server/digitalocean',
-  //       'realtime/server/source',
-  //     ],
-  //   },
-  // ],
-  // realtimeClient: [
-  //   {
-  //     type: 'category',
-  //     label: 'Realtime',
-  //     collapsed: false,
-  //     items: ['realtime/client/about'],
-  //   },
-  // ],
-  // postgrestServer: [
-  //   {
-  //     type: 'category',
-  //     label: 'PostgREST',
-  //     collapsed: false,
-  //     items: ['postgrest/server/about'],
-  //   },
-  // ],
   postgresServer: [
     {
       type: 'category',

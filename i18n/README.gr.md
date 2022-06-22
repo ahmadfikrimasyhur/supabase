@@ -1,12 +1,13 @@
 <p align="center">
-<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-rounded-corner-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-To [Supabase](https://supabase.io) είναι μια εναλλακτική λύση ανοιχτού κώδικα αντί του Firebase. Δημιουργούμε τις δυνατότητες του Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα εταιρικού επιπέδου.
+To [Supabase](https://supabase.com) είναι μια εναλλακτική λύση ανοιχτού κώδικα αντί του Firebase. Δημιουργούμε τις δυνατότητες του Firebase χρησιμοποιώντας εργαλεία ανοιχτού κώδικα εταιρικού επιπέδου.
 
 - [x] Hosted Postgres Database
 - [x] Realtime subscriptions
@@ -14,22 +15,24 @@ To [Supabase](https://supabase.io) είναι μια εναλλακτική λύ
 - [x] Auto-generated APIs
 - [x] Dashboard
 - [x] Storage
-- [ ] Functions (coming soon)
+- [x] Functions
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## Documentation
 
-Για το πλήρες Documentation, επισκεφθείτε το [supabase.io/docs](https://supabase.io/docs)
+Για το πλήρες Documentation, επισκεφθείτε το [supabase.com/docs](https://supabase.com/docs)
 
 ## Κοινότητα και υποστήριξη
 
 - [Community Forum](https://github.com/supabase/supabase/discussions). Καλύτερο για: βοήθεια στo building, συζήτηση σχετικά με τις βέλτιστες πρακτικές βάσης δεδομένων.
 - [GitHub Issues](https://github.com/supabase/supabase/issues). Καλύτερο για: σφάλματα (bugs) και λάθη (errors) που συναντάτε κατά τη χρήση Supabase.
-- [Email Support](https://supabase.io/docs/support#business-support). Καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή (Infrastructure) σας.
+- [Email Support](https://supabase.com/docs/support#business-support). Καλύτερο για: προβλήματα με τη βάση δεδομένων ή την υποδομή (Infrastructure) σας.
 
 ## Κατάσταση
 
 - [x] Alpha: Δοκιμάζουμε το Supabase με ένα κλειστό σύνολο πελατών
-- [x] Public Alpha: Όλοι μπορούν να εγγραφούν στο [app.supabase.io](https://app.supabase.io). Αλλά μην μας κρίνετε "σκληρά", υπάρχουν ακόμα μερικά λαθάκια (bugs) εδώ και εκεί
+- [x] Public Alpha: Όλοι μπορούν να εγγραφούν στο [app.supabase.com](https://app.supabase.com). Αλλά μην μας κρίνετε "σκληρά", υπάρχουν ακόμα μερικά λαθάκια (bugs) εδώ και εκεί
 - [x] Public Beta: Αρκετά σταθερό για για τις περισσότερες περιπτώσεις χρήσης μη εταιρικού χαρακτήρα (non-enterprise)
 - [ ] Public: Έτοιμο για Production
 
@@ -45,9 +48,9 @@ To [Supabase](https://supabase.io) είναι μια εναλλακτική λύ
 
 **Τρέχουσα αρχιτεκτονική**
 
-Το Supabase είναι ένα [hosted platform](https://app.supabase.io) (φιλοξενούμενη πλατφόρμα). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Supabase χωρίς να εγκαταστήσετε τίποτα. Εξακολουθούμε να αναπτύσουμε την εμπειρία της τοπικής ανάπτυξης (Local Development) - αυτή είναι τώρα η βασική μας εστίαση, μαζί με τη σταθερότητα της πλατφόρμας.
+Το Supabase είναι ένα [hosted platform](https://app.supabase.com) (φιλοξενούμενη πλατφόρμα). Μπορείτε να εγγραφείτε και να αρχίσετε να χρησιμοποιείτε το Supabase χωρίς να εγκαταστήσετε τίποτα. Εξακολουθούμε να αναπτύσουμε την εμπειρία της τοπικής ανάπτυξης (Local Development) - αυτή είναι τώρα η βασική μας εστίαση, μαζί με τη σταθερότητα της πλατφόρμας.
 
-![Architecture](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![Architecture](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - [PostgreSQL](https://www.postgresql.org/) is an object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
 - [Realtime](https://github.com/supabase/realtime) is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Supabase listens to Postgres' built-in replication functionality, converts the replication byte stream into JSON, then broadcasts the JSON over websockets.

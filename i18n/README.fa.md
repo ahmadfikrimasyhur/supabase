@@ -1,12 +1,13 @@
 <p align="center">
-<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/web/static/supabase-light-with-background.svg"/>
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--light.svg?sanitize=true#gh-light-mode-only">
+<img width="300" src="https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/supabase-logo-wordmark--dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
 
 ---
 
 # Supabase
 
-‫[Supabase](https://supabase.io) یک جایگزین اپن‌سورس برای Firebase است. ما در حال ساخت امکانات Firebase با استفاده ابزارهای اپن‌سورس و کلاس تجاری هستیم.
+‫[Supabase](https://supabase.com) یک جایگزین اپن‌سورس برای Firebase است. ما در حال ساخت امکانات Firebase با استفاده ابزارهای اپن‌سورس و کلاس تجاری هستیم.
 
 - [x] ‫دیتابیس Postgres میزبانی‌شده
 - [x] اتصال و ارتباط بلادرنگ
@@ -14,22 +15,24 @@
 - [x] ‫ساختن خودکار APIها
 - [x] پنل کاربری
 - [x] فضای ذخیره‌سازی
-- [ ] توابع (به زودی)
+- [x] توابع
+
+![Supabase Dashboard](https://raw.githubusercontent.com/supabase/supabase/master/apps/www/public/images/github/supabase-dashboard.png)
 
 ## مستندات
 
-برای مستندات کامل به‫ [supabase.io/docs](https://supabase.io/docs) مراجعه کنید.
+برای مستندات کامل به‫ [supabase.com/docs](https://supabase.com/docs) مراجعه کنید.
 
 ## جامعه و پشتیبانی
 
 - ‫[Community Forum](https://github.com/supabase/supabase/discussions). گزینه مناسب برای راهنمایی گرفتن در مورد توسعه و روش مناسب استفاده از دیتابیس می‌باشد.
 - ‫[GitHub Issues](https://github.com/supabase/supabase/issues). گزینه مناسب برای خطاها و باگ‌هایی که در استفاده از Supabase برمی‌خوردید.
-- ‫[Email Support](https://supabase.io/docs/support#business-support). بهترین گزینه برای مشکلات مرتبط با دیتابیس و زیرساخت است.
+- ‫[Email Support](https://supabase.com/docs/support#business-support). بهترین گزینه برای مشکلات مرتبط با دیتابیس و زیرساخت است.
 
 ## وضعیت
 
 - [x] ‫آلفا: در حال تست Supabase با گروه محدود از کاربران هستیم.
-- [x] ‫آلفای عمومی: همه می‌تواند برای استفاده از طریق [app.supabase.io](https://app.supabase.io) ثبت‌نام کنند. اما سخت نگیرید، ممکن است مشکلات معدودی وجود داشته باشد.
+- [x] ‫آلفای عمومی: همه می‌تواند برای استفاده از طریق [app.supabase.com](https://app.supabase.com) ثبت‌نام کنند. اما سخت نگیرید، ممکن است مشکلات معدودی وجود داشته باشد.
 - [x] بتای عمومی: قابل اتکا برای اکثر استفاده‌های غیر-تجاری می‌باشد.
 - [ ] عمومی: آماده برای استفاده تجاری.
 
@@ -45,9 +48,9 @@
 
 **معماری فعلی**
 
-‫Supabase یک [پلتفرم میزبانی‌شده](https://app.supabase.io) است. شما می‌توانید بدون نصب چیزی، ثبت‌نام و شروع به استفاده از Supabase کنید. ما هنوز در حال ساختن تجربه‌ی توسعه local هستیم - این تمرکز اصلی فعلی ما علاوه بر اتکاپذیری است.
+‫Supabase یک [پلتفرم میزبانی‌شده](https://app.supabase.com) است. شما می‌توانید بدون نصب چیزی، ثبت‌نام و شروع به استفاده از Supabase کنید. ما هنوز در حال ساختن تجربه‌ی توسعه local هستیم - این تمرکز اصلی فعلی ما علاوه بر اتکاپذیری است.
 
-![معماری](https://supabase.io/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
+![معماری](https://supabase.com/docs/assets/images/supabase-architecture-9050a7317e9ec7efb7807f5194122e48.png)
 
 - ‫[PostgreSQL](https://www.postgresql.org/) یک سیستم دیتابیس object-relational با بیش از ۳۰سال سابقه توسعه می‌باشد که اعتبار زیادی بابت اتکاپذیری، امکانات قوی و سرعت کسب کرده است.
 - ‫[Realtime](https://github.com/supabase/realtime) یک سرور Elixir است که اجازه می‌دهد به اضافه کردن، به‌روز کردن و حذف کردن‌های PostgreSQL با استفاده از websockets گوش دهید. Supabase به عملکرد داخلی PostgreSQL برای replication گوش می‌دهد، replication byte stream را به JSON تبدیل می‌کند و JSON را از طریق websock به خارج broadcast می‌کند.

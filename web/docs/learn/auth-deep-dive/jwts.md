@@ -96,7 +96,7 @@ You can test out minting your own tokens on [https://jwt.io](https://jwt.io).
 
 It is important to note that anyone who possesses the `jwt_secret` here can create new tokens, and also verify existing ones. More advanced JWT algorithms use two secrets: one for the creation of tokens, and a separate one to verify the validity of signed tokens.
 
-You might wonder why JWTs are so popular all of a sudden. The answer is that with the mass adoption of microservice architecture, we were in a situation where several distinct microservices (APIs, websites, servers, etc.) want to easily validate that a user is who they say they are, or are in other words a "logged-in" user. Traditional session tokens are no use here, since they would require each microservice to either maintain a record of currently valid session tokens or to query a central database each time a user wants to access a resource in order to check the validity of the session token – very inefficient indeed. JWT-based auth in this sense is decentralised, since anyone with the `jwt_secret` can verify a token without needing access to a centralised database.
+You might wonder why JWTs are so popular all of a sudden. The answer is that with the mass adoption of microservice architecture, we were in a situation where several distinct microservices (APIs, websites, servers, etc.) want to easily validate that a user is who they say they are, or are in other words a "logged-in" user. Traditional session tokens are no use here, since they would require each microservice to either maintain a record of currently valid session tokens or to query a central database each time a user wants to access a resource in order to check the validity of the session token – very inefficient indeed. JWT-based auth in this sense is decentralized, since anyone with the `jwt_secret` can verify a token without needing access to a centralized database.
 
 Note: One downside of JWTs is that they are not easily voidable, like session tokens. If a JWT is leaked to a malicious actor, they will be able to redeem it anywhere until the expiry date is reached – unless of course the system owner updates the `jwt_secret` (which will of course invalidate _everyone's_ existing tokens).
 
@@ -122,6 +122,7 @@ If we put this token into https://jwt.io, we see it decodes to:
 ```js
 {
   "role": "anon",
+  "iss": "supabase",
   "iat": 1614205174,
   "exp": 1929781174
 }
@@ -167,7 +168,7 @@ Now that you understand what JWTs are and where they're used in Supabase, you ca
 
 ### Resources
 
-- JWT debugger: https://jwt.io/​
+- JWT debugger: https://jwt.io/
 
 ### Next steps
 
@@ -177,4 +178,4 @@ Now that you understand what JWTs are and where they're used in Supabase, you ca
 - [Part Three: Policies](/docs/learn/auth-deep-dive/auth-policies)
 - [Part Four: GoTrue](/docs/learn/auth-deep-dive/auth-gotrue)
 - [Part Five: Google Oauth](/docs/learn/auth-deep-dive/auth-google-oauth)
-- Sign up for Supabase: [app.supabase.io](https://app.supabase.io)
+- Sign up for Supabase: [app.supabase.com](https://app.supabase.com)
